@@ -411,3 +411,8 @@ USER mastodon
 EXPOSE 3000
 # Set container tini as default entry point
 ENTRYPOINT ["/usr/bin/tini", "--"]
+
+# Use the final Mastodon build stage
+FROM mastodon AS final
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+
