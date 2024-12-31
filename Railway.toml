@@ -1,0 +1,4 @@
+[service]
+  name = "mastodon-server"
+  buildCommand = "docker build -t mastodon-server ."
+  startCommand = "docker run -p 3000:3000 mastodon-server"
